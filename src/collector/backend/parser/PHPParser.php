@@ -38,7 +38,7 @@ namespace TheSeer\phpDox\Collector\Backend {
 
     use TheSeer\phpDox\Collector\SourceFile;
     use TheSeer\phpDox\DocBlock\Parser as DocblockParser;
-    use PhpParser\ParserFactory;
+    use PhpLang\Phack\PhpParser as phack;
     use TheSeer\phpDox\ErrorHandler;
 
     /**
@@ -97,7 +97,7 @@ namespace TheSeer\phpDox\Collector\Backend {
          */
         private function getParserInstance() {
             if ($this->parser === NULL) {
-                $this->parser = (new ParserFactory)->create(ParserFactory::PREFER_PHP7, new CustomLexer());
+            	$this->parser = (new phack\ParserFactory)->create(phack\ParserFactory::HACKLANG, new CustomLexer());
             }
             return $this->parser;
         }

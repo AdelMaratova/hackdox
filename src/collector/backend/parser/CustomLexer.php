@@ -36,13 +36,14 @@
      */
 namespace TheSeer\phpDox\Collector\Backend {
 
-    use PhpParser\Lexer\Emulative;
-    use PhpParser\Parser\Tokens;
+    use PhpLang\Phack\PhpParser\Lexer as phack;
+    use PhpLang\Phack\PhpParser\Parser\Tokens;
+    
 
     /**
      * CustomLexer as suggest for workaround for issue 26 (https://github.com/nikic/PHP-Parser/issues/26)
      */
-    class CustomLexer extends Emulative {
+    class CustomLexer extends phack\HackLang {
 
         public function getNextToken(&$value = NULL, &$startAttributes = NULL, &$endAttributes = NULL) {
             $tokenId = parent::getNextToken($value, $startAttributes, $endAttributes);

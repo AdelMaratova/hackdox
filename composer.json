@@ -12,6 +12,12 @@
   "support" : {
     "issues" : "https://github.com/theseer/phpdox/issues"
   },
+  "repositories":[
+      {
+          "type": "path",
+          "url": "/home/adel/phack"    
+      }
+  ],
   "require" : {
     "php" : ">=5.5",
     "ext-tokenizer" : "*",
@@ -24,7 +30,7 @@
     "theseer/directoryscanner" : ">=1.3.0",
     "theseer/fxsl" : ">=1.1",
     "phpunit/php-timer" : ">=1.0.6",
-    "nikic/php-parser" : "3.0.2"
+    "phplang/phack" : "*"      
   },
   "autoload": {
     "classmap": [
